@@ -29,6 +29,12 @@ html, body {
     	width: 80% !important;
     }
 
+    .img.holder > iframe {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+}
+
 }
 
 @media screen and (min-width: 800px) {
@@ -49,6 +55,11 @@ html, body {
     	padding-right: 50px;
     	float: left;
     }
+
+    .img.holder > iframe {
+    width: 300px;
+    height: 300px;
+}
 }
 
 .header {
@@ -117,6 +128,9 @@ html, body {
 .img.holder > img {
     width: 100%;
     height: auto;
+    overflow: hidden;
+}
+.img.holder > iframe {
     overflow: hidden;
 }
 
