@@ -1,0 +1,26 @@
+<script>
+// Defines a function that will receive the RSS-feed name and fetch the server for it
+function showRSS(str) {
+  if (str.length==0) { // Is the string empty?
+    document.getElementById("rssOutput").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) { // Fixing things for IE6 and IE5
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() { // This is called every time our request state changes
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) { // Request is finished and status is OK
+    // so we can do something insteresting with the output
+      document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+    }
+  }
+  // This create a GET request to "getrss.php" file, 
+  // sending "q" as a parameter containing the value of "str"
+  xmlhttp.open("GET","getrss.php?q="+str,true);
+  // Sending the request
+  xmlhttp.send();
+}
+</script>
