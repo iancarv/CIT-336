@@ -1,0 +1,47 @@
+1. What would be the SQL to create this database and table?
+SQL stands for structured query language. It is a database languase that can be used to create, query, modify and delete information from a SQL Database
+
+2. What type of software do we need to have running on our computers to run PHP? 
+We need an webserver that is capable of interpreting and running PHP. It can be Apache httpd or NGinx. Also, In this example we are using a MySQL database. We can simplify the instalation process by using MAMP.
+
+
+3. What type of variable must $link be if we’re using it throughout the document?
+$link holds the database connects and if we want to make it available throughout the document, it should be a global variable.
+
+
+4. We’re using a GET request in this situation. In what situations might we choose to use a POST request instead?
+In general, we use POST request when there is sensible information in the request. So if we were sending password, POST would be a better choice.
+
+
+
+5. What is AJAX and why are we using it?
+AJAX stands for asynchronous JavaScript and XML and is a way to make requests to a server from a browser without reloading the webpage.
+
+
+6. What is an HTTP request?
+HTTP Request is a message from a client to a server that follows the HTTP (Hypertext Transfer Protocol)
+
+
+7. Where do we tell the client-side code what to do with the response from the server?
+We do that using javascript. The function 'onreadystatechange' is used as a callback when the request is finished. From there we can check if request was succesful and use the returned message.
+
+
+8. Is the AJAX on the server-side or client-side? Is the PHP on the client-side or server-side?
+AJAX is client-side. PHP is server-side
+
+9. This application now does two of the functions of CRUD. Which two functions?
+Create and Read
+
+
+10. Give me an example of 3 key-value pairs from your data.
+Getting value from variables in requests:
+$_GET['flavor'] -> The key 'flavor' is associated with the value sent as parameter.
+$_GET['scoops'] -> The key 'scoops' is associated with the value sent as parameter.
+$row['Time'] -> The key 'Time' is associated with the value retrieved from the database.
+
+
+11. If you were going to add this application to Github, what would be the steps to do that? Include the commands.
+First I would clone into the repository (git clone [URL]). Then add my files to the folder and add them to the repository (git add -A or git add [filename]). Then I would commit and push to the server [git commit -m [message], git push [remote] [branch]]
+
+12. What would be the benefits of using Github?
+Github allows you to version your code in a way that is easy to go back to differents commits. Also GitHub allows you to collaborate and share repositories.
