@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host_id: 
+  subject_id: 
+  finished: false
+
+two:
+  host_id: 
+  subject_id: 
+  finished: false
