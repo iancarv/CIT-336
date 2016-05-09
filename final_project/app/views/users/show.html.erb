@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+<p><%= link_to 'Answer Questionaries', questionnaires_path %></p>
+<p><%= link_to 'See what your results', hosted_index_path %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

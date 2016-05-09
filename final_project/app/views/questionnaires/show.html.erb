@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @questionnaire.subject.username %>
+  <%= render @questionnaire.answers %>
+</p>
+
+<%= link_to 'Back', questionnaires_path %>

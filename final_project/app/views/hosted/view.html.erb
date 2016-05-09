@@ -1,0 +1,8 @@
+<% @questions.each do |q| %>
+  <%= q.title %>
+  <ul>
+  <% q.alternatives.each do |a| %>
+    <li><%= a.text %>) <%= a.text %> <%= 100 * @answers.where(alternative_id: a.id).length / @answers.where(question_id: q).length %> %</li>
+  <% end %>
+  </ul>
+<% end %>

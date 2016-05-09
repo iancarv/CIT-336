@@ -1,0 +1,11 @@
+<p><%= question.id %>) <%= question.title %></p>
+
+<ul>
+<% question.alternatives.each do |a| %>
+  <li>
+  	<%= radio_button_tag('answer[alternative_id]', a.id, (answer and a == answer.alternative)) %>
+	<%= label_tag('answer_alternative_'+a.id.to_s, a.text) %>
+  </li>
+
+  <% end %>
+</ul>
