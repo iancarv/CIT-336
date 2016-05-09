@@ -29,7 +29,7 @@ class HostedController < ApplicationController
       if @questionnaire.save
         invitee_email = params[:questionnaire][:user_email]
         Mailer.invite_email(invitee_email, @questionnaire).deliver_later
-        format.html { redirect_to hosted_url(@questionnaire) , notice: 'Questionnaire was successfully created.' }
+        format.html { redirect_to hosted_view_url , notice: 'Your invitation was sent.' }
       else
         format.html { render :new }
         format.json { render json: @questionnaire.errors, status: :unprocessable_entity }

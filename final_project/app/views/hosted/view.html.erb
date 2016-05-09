@@ -1,8 +1,19 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Invite User', new_hosted_path, class: 'btn btn-primary' %>
+
 <% @questions.each do |q| %>
-  <%= q.title %>
-  <ul>
+	<ul class="list-group">
+	<li class="list-group-item">
+	<h4 class="list-group-item-heading"><%= q.title %></h4>
+	</li>
   <% q.alternatives.each do |a| %>
-    <li><%= a.text %>) <%= a.text %> <%= 100 * @answers.where(alternative_id: a.id).length / @answers.where(question_id: q).length %> %</li>
+  	<li class="list-group-item" ><%= a.text %>) <%= a.text %>
+  	<% if @answers.where(question_id: q).length > 0 %>
+    	 <%= 100 * @answers.where(alternative_id: a.id).length / @answers.where(question_id: q).length %>%
+    <% else %>
+    	0%
+    <% end %>
+    </li>
   <% end %>
   </ul>
 <% end %>

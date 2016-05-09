@@ -1,11 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+  <h2>User: <%= @user.name %></h2>
 </p>
-<p><%= link_to 'Answer Questionaries', questionnaires_path %></p>
-<p><%= link_to 'See what your results', hosted_index_path %></p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Answer Questionaries', questionnaires_path, class: 'btn btn-primary' %>
+<%= link_to 'See your results', hosted_view_path, class: 'btn btn-primary' %>
