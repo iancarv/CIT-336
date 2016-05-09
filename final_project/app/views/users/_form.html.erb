@@ -1,0 +1,23 @@
+<%= form_for(@user, :html => {:class => 'form-signup'}) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label(:name, "Name", class: "sr-only") %><br>
+  <%= f.text_field :name, class: "form-control", placeholder: "Full Name" %>
+  <%= f.label(:email, "E-Mail", class: "sr-only") %><br>
+  <%= f.email_field :email, class: "form-control", placeholder: "Email address" %>
+  <%= f.label(:password, "Password", class: "sr-only") %><br>
+   <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  <%= f.label(:password_confirmation, "Confirm Password", class: "sr-only") %><br>
+   <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+  <button class="btn btn-lg btn-primary btn-block btn-send" type="submit">Submit</button>
+<% end %>

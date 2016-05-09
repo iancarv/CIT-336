@@ -1,0 +1,21 @@
+<%= form_for(answer) do |f| %>
+  <% if answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= f.hidden_field :question_id, :value => answer.question.id %>
+<%= f.hidden_field :questionnaire_id, :value => answer.questionnaire.id %>
+<%= render partial: "questions/question", locals: {question: answer.question, answer: answer, form:f} %>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>

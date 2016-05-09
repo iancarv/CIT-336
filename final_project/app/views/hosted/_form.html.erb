@@ -1,0 +1,21 @@
+<%= form_for [@hosted], :url => url_for(:controller => 'hosted', :action => 'create') do |f| %>
+  <% if @hosted.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hosted.errors.count, "error") %> prohibited this hosted from being saved:</h2>
+
+      <ul>
+      <% @hosted.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_email %><br>
+    <%= f.email_field :user_email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
